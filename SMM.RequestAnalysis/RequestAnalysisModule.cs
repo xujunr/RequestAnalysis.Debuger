@@ -47,7 +47,7 @@ namespace SMM.RequestAnalysis
                 }
             }
 
-            if (!string.IsNullOrEmpty(requestAnalysis.Mode))
+            if (!string.IsNullOrEmpty(requestAnalysis?.Mode))
             {
                 OutputResult(requestAnalysis);
             }

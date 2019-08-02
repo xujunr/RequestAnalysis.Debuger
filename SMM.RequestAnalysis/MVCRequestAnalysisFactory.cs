@@ -9,7 +9,7 @@ namespace SMM.RequestAnalysis
     public class MVCRequestAnalysisFactory : RequestAnalysisFactory
     {
         protected override string LookupPrefix => "Controllers";
-        protected override string Mode => "MVC Test";
+        protected override string Mode => "MVC";
         public override RequestAnalysis CreateRequestAnalysis(RouteData routeData)
         {
             RequestAnalysis requestAnalysis = new RequestAnalysis();

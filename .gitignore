@@ -1,0 +1,85 @@
+*.suo
+*.user
+*.log
+*.orig
+.vs
+
+[Bb]in
+[Oo]bj
+
+Build/package
+node_modules
+
+aws-logger-errors.txt
+
+# Webpack static assets
+Source/SMM.Web/static
+Source/SMM.Web/Public/skin
+Source/SMM.Web/Public/Assets/Styles/bootstrap/bootstrap.min.css
+Source/SMM.Web/Public/Assets/Styles/bootstrap/bootstrap.css
+Source/SMM.Web/imagecache
+Source/SMM.Web/Public/Custom/404
+Source/SMM.Web/coverage
+Source/SMM.Web/.env
+
+
+# OSX files to ignore. https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Temp directory for exports
+Source/SMM.Web/Docs
+
+# Webstorm project directory
+.idea
+
+
+# Ignore NuGet Packages
+*.nupkg
+# Except those that are used as local dependencies
+!Lib/*.nupkg
+# Ignore the packages folder
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+Source/manager.submittable.com.userprefs
+Source/SMM.Web/lintreport
+
+# accessibility repositories
+Source/SMM.Web/a11yReports
+
+Source/SMM.Web/App_Data
+
+database/integration.bak
+
+# docz documentation https://www.docz.site/
+.docz
+
+# ignore serverless generated json files
+.serverless
+Source/SMM.Web/test/mocks/api/db.json

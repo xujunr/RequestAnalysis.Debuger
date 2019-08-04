@@ -1,12 +1,13 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using System.Web;
+using System.Web.Compilation;
 using System.Web.Routing;
 
 namespace SMM.RequestAnalysis
 {
-    public abstract class RequestAnalysisFactory
+    public abstract class RequestAnalysisProvider : IRequestAnalysisProvider
     {
-        public abstract RequestAnalysis CreateRequestAnalysis(RouteData routeData);
+        public abstract RequestAnalysis GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext);
         protected virtual string Mode { get; }
         protected virtual string LookupPrefix { get; }
 

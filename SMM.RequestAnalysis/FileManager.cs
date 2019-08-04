@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SMM.RequestAnalysis
 {
-    public class FileRequestAnalysis
+    public class FileManager
     {
         private const string _defaultPath = @"C:\projects\RequestAnalysis\";
         public void WriteFile(string result)

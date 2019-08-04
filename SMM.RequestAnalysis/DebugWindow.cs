@@ -2,9 +2,9 @@
 
 namespace SMM.RequestAnalysis
 {
-    public  class DebugWindowRequestAnalysis
+    public  class DebugWindow
     {
-        public void OutputDebugWindow(string result)
+        public void Print(string result)
         {
             Debug.WriteLine(result);
             Debug.Flush();

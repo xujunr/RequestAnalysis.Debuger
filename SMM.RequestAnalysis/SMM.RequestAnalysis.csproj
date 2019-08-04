@@ -44,17 +44,32 @@
     <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.SelfHost">
+      <HintPath>packages\Microsoft.AspNet.WebApi.SelfHost.5.2.6\lib\net45\System.Web.Http.SelfHost.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DebugWindowRequestAnalysis.cs" />
+    <Compile Include="Providers\CompositeRequestAnalysisProvider.cs" />
+    <Compile Include="DebugWindow.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="FileRequestAnalysis.cs" />
-    <Compile Include="RequestAnalysisFactory.cs" />
-    <Compile Include="WebApiRequestAnalysisFactory.cs" />
-    <Compile Include="MVCRequestAnalysisFactory.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="Providers\SelfHostHttpRequestAnalysisProvider.cs" />
+    <Compile Include="Providers\WebHostRequestAnalysisProvider.cs" />
+    <Compile Include="Providers\IRequestAnalysisProvider.cs" />
+    <Compile Include="RequestAnalysisDelegatingHandler.cs" />
+    <Compile Include="RequestAnalysisHandler.cs" />
+    <Compile Include="Providers\RequestAnalysisProvider.cs" />
+    <Compile Include="Providers\HttpRequestAnalysisProvider.cs" />
+    <Compile Include="Providers\MvcRequestAnalysisProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestAnalysis.cs" />
     <Compile Include="RequestAnalysisModule.cs" />
+    <Compile Include="RequestAnalysisContext.cs" />
+    <Compile Include="SelfHostRequestAnalysisHandler.cs" />
+    <Compile Include="WebHostRequestAnalysisHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

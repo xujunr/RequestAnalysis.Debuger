@@ -1,4 +1,5 @@
-﻿using System.Web.Routing;
+﻿using System.Collections.Generic;
+using System.Web.Routing;
 
 namespace SMM.RequestAnalysis
 {
@@ -11,7 +12,7 @@ namespace SMM.RequestAnalysis
         public string FilePath { get; set; }
         public string[] Parameters { get; set; }
         public string[] SupportedHttpMethods { get; set; }
-        public RouteValueDictionary Values { get; set; }
-        public RouteValueDictionary DataTokens { get; set; }
+        public IDictionary<string,object> Values { get; set; }
+        public IDictionary<string, object> DataTokens { get; set; }
     }
 }

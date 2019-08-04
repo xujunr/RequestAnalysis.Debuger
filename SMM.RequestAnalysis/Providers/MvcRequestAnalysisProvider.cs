@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -6,12 +7,13 @@ using System.Web.Routing;
 
 namespace SMM.RequestAnalysis
 {
-    public class MVCRequestAnalysisFactory : RequestAnalysisFactory
+    public class MvcRequestAnalysisProvider : RequestAnalysisProvider
     {
         protected override string LookupPrefix => "Controllers";
-        protected override string Mode => "MVC";
-        public override RequestAnalysis CreateRequestAnalysis(RouteData routeData)
+        protected override string Mode => "Mvc";
+        public override RequestAnalysis GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
         {
+            RouteData routeData = requestAnalysisContext.RouteData;
             RequestAnalysis requestAnalysis = new RequestAnalysis();
             string controllerName = routeData.Values.TryGetValue("controller", out object controller) ? controller.ToString() : null;
             requestAnalysis.ActionName = routeData.Values.TryGetValue("action", out object action) ? action.ToString() : null;
@@ -38,7 +40,7 @@ namespace SMM.RequestAnalysis
                 requestAnalysis.SupportedHttpMethods = requestAnalysis.SupportedHttpMethods.Count() == 0
                     ? new string[1] { "All" } : requestAnalysis.SupportedHttpMethods;
 
-                string path = string.Concat(AppDomain.CurrentDomain.BaseDirectory, LookupPrefix);
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LookupPrefix);
                 requestAnalysis.FilePath = LookupFilePath(path, requestAnalysis.ControllerName);
             }
             return requestAnalysis;

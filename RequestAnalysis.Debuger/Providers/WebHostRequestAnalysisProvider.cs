@@ -11,7 +11,7 @@ using System.Web.Http.SelfHost;
 using System.Web.Http.WebHost;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public  class WebHostRequestAnalysisProvider : IRequestAnalysisProvider
     {
@@ -25,7 +25,7 @@ namespace SMM.RequestAnalysis
             this._httpProvider = httpProvider;
         }
       
-        public RequestAnalysis GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
         {
             if (requestAnalysisContext.RouteData != null)
             {

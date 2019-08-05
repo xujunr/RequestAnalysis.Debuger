@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public class CompositeRequestAnalysisProvider : IRequestAnalysisProvider
     {
@@ -24,14 +24,14 @@ namespace SMM.RequestAnalysis
                 new HttpRequestAnalysisProvider())
            );
         }
-        public RequestAnalysis GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
         {
             foreach (var provider in Providers)
             {
-                RequestAnalysis requestAnalysis = provider.GetRequestAnalysis(requestAnalysisContext);
-                if (requestAnalysis != null)
+                RequestAnalysisResult analysisResult = provider.GetRequestAnalysis(requestAnalysisContext);
+                if (analysisResult != null)
                 {
-                    return requestAnalysis;
+                    return analysisResult;
                 }
             }
             return null;

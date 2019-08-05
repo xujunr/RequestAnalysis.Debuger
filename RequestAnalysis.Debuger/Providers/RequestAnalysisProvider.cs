@@ -3,11 +3,11 @@ using System.Web;
 using System.Web.Compilation;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public abstract class RequestAnalysisProvider : IRequestAnalysisProvider
     {
-        public abstract RequestAnalysis GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext);
+        public abstract RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext);
         protected virtual string Mode { get; }
         protected virtual string LookupPrefix { get; }
 

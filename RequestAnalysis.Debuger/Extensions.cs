@@ -9,7 +9,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Routing;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public static partial class Extensions
     {

@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public class RequestAnalysisDelegatingHandler : DelegatingHandler
     {    

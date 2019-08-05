@@ -12,13 +12,13 @@ using System.Web.Http.SelfHost;
 using System.Web.Http.WebHost;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public class HttpRequestAnalysisProvider : RequestAnalysisProvider
     {
         protected override string LookupPrefix => "Api";
         protected override string Mode => "Http";
-        public override RequestAnalysis GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
         {
             HttpRequestMessage request = requestAnalysisContext.RequestMessage;
             HttpConfiguration httpConfiguration = request.GetConfiguration();
@@ -36,20 +36,20 @@ namespace SMM.RequestAnalysis
             HttpActionDescriptor actionDescriptor = actionSelector.SelectAction(controllerContext);
 
 
-            RequestAnalysis requestAnalysis = new RequestAnalysis();
-            requestAnalysis.Url = request.RequestUri.ToString();
-            requestAnalysis.SupportedHttpMethods = actionDescriptor.SupportedHttpMethods.Select(method => method.Method).ToArray();
-            requestAnalysis.Parameters = actionDescriptor.GetParameters().Select(parameter => parameter.ParameterName).ToArray();
-            requestAnalysis.ActionName = actionDescriptor.ActionName;
-            requestAnalysis.ControllerName = actionDescriptor.ControllerDescriptor.ControllerName;
-            requestAnalysis.Values = httpRouteData.Values;
-            requestAnalysis.DataTokens = httpRouteData.Route.DataTokens;
-            requestAnalysis.Mode = Mode;
+            RequestAnalysisResult analysisResult = new RequestAnalysisResult();
+            analysisResult.Url = request.RequestUri.ToString();
+            analysisResult.SupportedHttpMethods = actionDescriptor.SupportedHttpMethods.Select(method => method.Method).ToArray();
+            analysisResult.Parameters = actionDescriptor.GetParameters().Select(parameter => parameter.ParameterName).ToArray();
+            analysisResult.ActionName = actionDescriptor.ActionName;
+            analysisResult.ControllerName = actionDescriptor.ControllerDescriptor.ControllerName;
+            analysisResult.Values = httpRouteData.Values;
+            analysisResult.DataTokens = httpRouteData.Route.DataTokens;
+            analysisResult.Mode = Mode;
 
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LookupPrefix);
-            requestAnalysis.FilePath = LookupFilePath(path, requestAnalysis.ControllerName);
+            analysisResult.FilePath = LookupFilePath(path, analysisResult.ControllerName);
 
-            return requestAnalysis;
+            return analysisResult;
         }
     }
 }

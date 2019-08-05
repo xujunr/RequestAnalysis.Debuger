@@ -13,7 +13,7 @@ using System.Web.Http.WebHost;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public class RequestAnalysisModule : IHttpModule
     {

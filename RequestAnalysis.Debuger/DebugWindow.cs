@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public  class DebugWindow
     {

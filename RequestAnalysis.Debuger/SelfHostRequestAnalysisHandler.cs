@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Web.Http.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public class SelfHostRequestAnalysisHandler : RequestAnalysisHandler
     {

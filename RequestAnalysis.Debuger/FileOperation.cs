@@ -2,9 +2,9 @@
 using System.IO;
 using System.Text;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
-    public class FileManager
+    public class FileOperation
     {
         private const string _defaultPath = @"C:\projects\RequestAnalysis\";
         public void WriteFile(string result)

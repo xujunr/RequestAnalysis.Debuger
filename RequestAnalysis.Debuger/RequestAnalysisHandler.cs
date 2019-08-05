@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web;
-using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public abstract class RequestAnalysisHandler
     {
@@ -19,7 +15,7 @@ namespace SMM.RequestAnalysis
 
             if (_isEnableFileOutput)
             {
-                Output += new FileManager().WriteFile;
+                Output += new FileOperation().WriteFile;
             }
         }
         public abstract  void Excute();
@@ -28,10 +24,10 @@ namespace SMM.RequestAnalysis
         {
             try
             {
-                RequestAnalysis requestAnalysis = provider.GetRequestAnalysis(requestAnalysisContext);
-                if (!string.IsNullOrEmpty(requestAnalysis?.Mode))
+                RequestAnalysisResult analysisResult = provider.GetRequestAnalysis(requestAnalysisContext);
+                if (!string.IsNullOrEmpty(analysisResult?.Mode))
                 {
-                    OutputResult(requestAnalysis);
+                    OutputResult(analysisResult);
                 }
             }
             catch (Exception ex)
@@ -49,7 +45,7 @@ namespace SMM.RequestAnalysis
             Output += new DebugWindow().Print;
         }
 
-        protected virtual void OutputResult(RequestAnalysis requestAnalysis)
+        protected virtual void OutputResult(RequestAnalysisResult requestAnalysis)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("=================================================================================");

@@ -11,12 +11,12 @@ using System.Web.Http.SelfHost;
 using System.Web.Http.WebHost;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public class SelfHostHttpRequestAnalysisProvider : HttpRequestAnalysisProvider
     {
         protected override string Mode => "SelfHost-Http";
-        public override RequestAnalysis GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
         {
             if (requestAnalysisContext.HttpRouteData!=null)
             {

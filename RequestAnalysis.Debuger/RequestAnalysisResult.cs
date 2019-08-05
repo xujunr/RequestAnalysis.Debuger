@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
-    public class RequestAnalysis
+    public class RequestAnalysisResult
     {
         public string Url { get; set; }
         public string ControllerName { get; set; }

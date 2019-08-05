@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Http.Routing;
 using System.Web.Routing;
 
-namespace SMM.RequestAnalysis
+namespace RequestAnalysis.Debuger
 {
     public class RequestAnalysisContext
     {

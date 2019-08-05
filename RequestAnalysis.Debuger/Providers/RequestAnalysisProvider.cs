@@ -7,7 +7,7 @@ namespace RequestAnalysis.Debuger
 {
     public abstract class RequestAnalysisProvider : IRequestAnalysisProvider
     {
-        public abstract RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext);
+        public abstract RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext analysisContext);
         protected virtual string Mode { get; }
         protected virtual string LookupPrefix { get; }
 

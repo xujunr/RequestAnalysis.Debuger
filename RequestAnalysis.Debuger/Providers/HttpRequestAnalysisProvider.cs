@@ -18,9 +18,9 @@ namespace RequestAnalysis.Debuger
     {
         protected override string LookupPrefix => "Api";
         protected override string Mode => "Http";
-        public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext analysisContext)
         {
-            HttpRequestMessage request = requestAnalysisContext.RequestMessage;
+            HttpRequestMessage request = analysisContext.RequestMessage;
             HttpConfiguration httpConfiguration = request.GetConfiguration();
             IHttpRouteData httpRouteData = httpConfiguration.Routes.GetRouteData(request);
             request.SetRouteData(httpRouteData);

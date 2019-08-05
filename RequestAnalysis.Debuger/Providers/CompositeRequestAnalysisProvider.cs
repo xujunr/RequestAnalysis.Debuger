@@ -24,11 +24,11 @@ namespace RequestAnalysis.Debuger
                 new HttpRequestAnalysisProvider())
            );
         }
-        public RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext analysisContext)
         {
             foreach (var provider in Providers)
             {
-                RequestAnalysisResult analysisResult = provider.GetRequestAnalysis(requestAnalysisContext);
+                RequestAnalysisResult analysisResult = provider.GetRequestAnalysis(analysisContext);
                 if (analysisResult != null)
                 {
                     return analysisResult;

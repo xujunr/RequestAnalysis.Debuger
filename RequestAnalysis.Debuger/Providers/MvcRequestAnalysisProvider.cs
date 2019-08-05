@@ -11,9 +11,9 @@ namespace RequestAnalysis.Debuger
     {
         protected override string LookupPrefix => "Controllers";
         protected override string Mode => "Mvc";
-        public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext analysisContext)
         {
-            RouteData routeData = requestAnalysisContext.RouteData;
+            RouteData routeData = analysisContext.RouteData;
             RequestAnalysisResult analysisResult = new RequestAnalysisResult();
             string controllerName = routeData.Values.TryGetValue("controller", out object controller) ? controller.ToString() : null;
             analysisResult.ActionName = routeData.Values.TryGetValue("action", out object action) ? action.ToString() : null;

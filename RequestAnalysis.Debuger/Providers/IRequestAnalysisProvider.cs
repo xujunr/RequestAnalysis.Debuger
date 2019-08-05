@@ -5,6 +5,6 @@ namespace RequestAnalysis.Debuger
 {
     public interface IRequestAnalysisProvider
     {
-         RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext);
+         RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext analysisContext);
     }
 }

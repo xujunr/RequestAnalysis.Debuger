@@ -20,11 +20,11 @@ namespace RequestAnalysis.Debuger
         }
         public abstract  void Excute();
     
-        protected void ExcuteCore(RequestAnalysisContext requestAnalysisContext, IRequestAnalysisProvider provider)
+        protected void ExcuteCore(RequestAnalysisContext analysisContext, IRequestAnalysisProvider provider)
         {
             try
             {
-                RequestAnalysisResult analysisResult = provider.GetRequestAnalysis(requestAnalysisContext);
+                RequestAnalysisResult analysisResult = provider.GetRequestAnalysis(analysisContext);
                 if (!string.IsNullOrEmpty(analysisResult?.Mode))
                 {
                     OutputResult(analysisResult);

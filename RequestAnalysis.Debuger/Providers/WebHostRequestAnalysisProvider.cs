@@ -25,15 +25,15 @@ namespace RequestAnalysis.Debuger
             this._httpProvider = httpProvider;
         }
       
-        public RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext analysisContext)
         {
-            if (requestAnalysisContext.RouteData != null)
+            if (analysisContext.RouteData != null)
             {
-                if (requestAnalysisContext.RouteData?.RouteHandler.GetType() == typeof(HttpControllerRouteHandler))
+                if (analysisContext.RouteData?.RouteHandler.GetType() == typeof(HttpControllerRouteHandler))
                 {
-                    return _httpProvider.GetRequestAnalysis(requestAnalysisContext);
+                    return _httpProvider.GetRequestAnalysis(analysisContext);
                 }
-                return _mvcProvider.GetRequestAnalysis(requestAnalysisContext);
+                return _mvcProvider.GetRequestAnalysis(analysisContext);
             }
             return null;
         }

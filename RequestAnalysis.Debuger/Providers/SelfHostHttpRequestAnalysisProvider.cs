@@ -16,11 +16,11 @@ namespace RequestAnalysis.Debuger
     public class SelfHostHttpRequestAnalysisProvider : HttpRequestAnalysisProvider
     {
         protected override string Mode => "SelfHost-Http";
-        public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext requestAnalysisContext)
+        public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext analysisContext)
         {
-            if (requestAnalysisContext.HttpRouteData!=null)
+            if (analysisContext.HttpRouteData!=null)
             {
-                return base.GetRequestAnalysis(requestAnalysisContext);
+                return base.GetRequestAnalysis(analysisContext);
             }
             return null;
         }

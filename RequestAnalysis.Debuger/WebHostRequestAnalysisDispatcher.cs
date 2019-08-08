@@ -10,10 +10,10 @@ using System.Web.Routing;
 
 namespace RequestAnalysis.Debuger
 {
-    public class WebHostRequestAnalysisHandler : RequestAnalysisHandler
+    public class WebHostRequestAnalysisDispatcher : RequestAnalysisDispatcher
     {
         public HttpContextWrapper _contextWrapper { get; set; }
-        public WebHostRequestAnalysisHandler(HttpContextWrapper contextWrapper)
+        public WebHostRequestAnalysisDispatcher(HttpContextWrapper contextWrapper)
             => _contextWrapper = contextWrapper;
         public override void Excute()
         {

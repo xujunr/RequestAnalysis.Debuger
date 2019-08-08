@@ -60,7 +60,7 @@
     <Compile Include="Providers\WebHostRequestAnalysisProvider.cs" />
     <Compile Include="Providers\IRequestAnalysisProvider.cs" />
     <Compile Include="RequestAnalysisDelegatingHandler.cs" />
-    <Compile Include="RequestAnalysisHandler.cs" />
+    <Compile Include="RequestAnalysisDispatcher.cs" />
     <Compile Include="Providers\RequestAnalysisProvider.cs" />
     <Compile Include="Providers\HttpRequestAnalysisProvider.cs" />
     <Compile Include="Providers\MvcRequestAnalysisProvider.cs" />
@@ -68,8 +68,8 @@
     <Compile Include="RequestAnalysisResult.cs" />
     <Compile Include="RequestAnalysisModule.cs" />
     <Compile Include="RequestAnalysisContext.cs" />
-    <Compile Include="SelfHostRequestAnalysisHandler.cs" />
-    <Compile Include="WebHostRequestAnalysisHandler.cs" />
+    <Compile Include="SelfHostRequestAnalysisDispatcher.cs" />
+    <Compile Include="WebHostRequestAnalysisDispatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -5,11 +5,11 @@ using System.Web;
 
 namespace RequestAnalysis.Debuger
 {
-    public abstract class RequestAnalysisHandler
+    public abstract class RequestAnalysisDispatcher
     {
         private readonly bool _isEnableFileOutput = true;
         private Action<string> Output;
-        public RequestAnalysisHandler()
+        public RequestAnalysisDispatcher()
         {
             SetDebugWindowRequestAnalysis();
 

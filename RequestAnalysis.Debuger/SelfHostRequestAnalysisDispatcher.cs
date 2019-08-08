@@ -4,10 +4,10 @@ using System.Web.Http.Routing;
 
 namespace RequestAnalysis.Debuger
 {
-    public class SelfHostRequestAnalysisHandler : RequestAnalysisHandler
+    public class SelfHostRequestAnalysisDispatcher : RequestAnalysisDispatcher
     {
         public HttpRequestMessage _request { get; set; }
-        public SelfHostRequestAnalysisHandler(HttpRequestMessage request) => _request = request;
+        public SelfHostRequestAnalysisDispatcher(HttpRequestMessage request) => _request = request;
 
         public override void Excute()
         {

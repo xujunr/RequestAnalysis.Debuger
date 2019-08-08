@@ -24,7 +24,7 @@ namespace RequestAnalysis.Debuger
 
         private void OnPostAcquireRequestState(object sender, EventArgs e)
         {
-            new WebHostRequestAnalysisHandler(new HttpContextWrapper(HttpContext.Current)).Excute();          
+            new WebHostRequestAnalysisDispatcher(new HttpContextWrapper(HttpContext.Current)).Excute();          
         }
         public void Dispose() { }
     }

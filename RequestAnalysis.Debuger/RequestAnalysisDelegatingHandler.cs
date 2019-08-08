@@ -13,7 +13,7 @@ namespace RequestAnalysis.Debuger
     {    
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            new SelfHostRequestAnalysisHandler(request).Excute();
+            new SelfHostRequestAnalysisDispatcher(request).Excute();
             return base.SendAsync(request, cancellationToken);
         }
     }

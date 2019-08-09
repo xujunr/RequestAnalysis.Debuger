@@ -16,6 +16,7 @@ namespace RequestAnalysis.Debuger
     public class SelfHostHttpRequestAnalysisProvider : HttpRequestAnalysisProvider
     {
         protected override string Mode => "SelfHost-Http";
+        protected override string LookupPrefix => "../../Controllers";
         public override RequestAnalysisResult GetRequestAnalysis(RequestAnalysisContext analysisContext)
         {
             if (analysisContext.HttpRouteData!=null)

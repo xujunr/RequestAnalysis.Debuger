@@ -46,7 +46,7 @@ namespace RequestAnalysis.Debuger
             analysisResult.DataTokens = httpRouteData.Route.DataTokens;
             analysisResult.Mode = Mode;
 
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LookupPrefix);
+            string path = new DirectoryInfo(string.Format(@"{0}{1}", AppDomain.CurrentDomain.BaseDirectory, LookupPrefix)).FullName;
             analysisResult.FilePath = LookupFilePath(path, analysisResult.ControllerName);
 
             return analysisResult;
